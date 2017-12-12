@@ -31,7 +31,7 @@ class Controller
         $this->login=$_REQUEST['login'];
         $this->password=$_REQUEST['password'];
         if($this->login!=NULL&&$this->password){
-            
+             
         }
         require("Vues/PageBienvenue.php");
     }
