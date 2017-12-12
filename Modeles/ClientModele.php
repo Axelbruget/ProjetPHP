@@ -8,5 +8,20 @@
 
 class ClientModele
 {
+    private $cg;
 
+    public function __construct($con, $p)
+    {
+        $this->cg=new ClientGateway($con);
+    }
+
+    public function afficherLesClient(){
+        $this->cg->display();
+    }
+
+    //ajouterClient
+    //supprimerClient
+    //choisirUnClient
+    //seConnecter();
+    //seDeconnecter();
 }

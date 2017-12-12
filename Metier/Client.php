@@ -9,21 +9,19 @@
 class Client
 {
     private $id;
-    private $nom;
-    private $prenom;
     private $login;
     private $mdp;
+    private $isAdmin; //0 : client, 1 : admin
 
-    public function __construct($id,$nom,$prenom,$login,$mdp){
+    public function __construct($id,$login,$mdp, $isAdmin){
         $this->id=$id;
-        $this->nom=$nom;
-        $this->prenom=$prenom;
         $this->login=$login;
         $this->mdp=$mdp;
+        $this->isAdmin=$isAdmin;
     }
 
     public function __toString()
     {
-        return $this->id." ".$this->nom." ".$this->prenom;
+        return $this->id;
     }
 }
