@@ -10,13 +10,19 @@ class ClientModele
 {
     private $cg;
 
-    public function __construct($con, $p)
+    public function __construct()
     {
-        $this->cg=new ClientGateway($con);
+        $this->cg=new ClientGateway();
     }
 
     public function afficherLesClient(){
         $this->cg->display();
+    }
+
+    public function connection(){
+        echo "session";
+        var_dump($_SESSION);
+        return $this->cg->findClient($_SESSION['login'],$_SESSION['password']);
     }
 
     //ajouterClient

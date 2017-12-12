@@ -18,6 +18,8 @@ class Connection extends PDO
     public function executeQuery($query, $parameters){
         $this ->prepareur = parent::prepare($query);
         $i=1;
+        echo "parameters";
+        var_dump($parameters);
         foreach ($parameters as $val1 => $val2)
         {
             $this ->prepareur ->bindValue($i, $val1, $val2);
