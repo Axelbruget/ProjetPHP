@@ -8,8 +8,8 @@
 
 class Controller
 {
-    private $action;
-    private $login="";
+    private $login;
+    private $password;
 
     public function __construct(){
         session_start();
@@ -22,7 +22,7 @@ class Controller
         $rep=__DIR__.'/../';
         switch($action){
             case null:require($rep."Vues/PageConnection.php");break;
-            case 'valider': require($rep."Vues/PageBienvenue.php");break;
+            case 'valider': break;
             default :echo "gna";break;
         }
     }
@@ -30,6 +30,10 @@ class Controller
     public function ajouterClient(){
         $this->login=$_REQUEST['login'];
         $this->password=$_REQUEST['password'];
+        if($this->login!=NULL&&$this->password){
+            
+        }
+        require("Vues/PageBienvenue.php");
     }
 }
 
