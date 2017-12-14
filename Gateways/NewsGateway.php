@@ -8,5 +8,67 @@
 
 class NewsGateway
 {
+    private $con;
+    private $phraseComplique='mysql:host=localhost;dbname=sitedenewsbdd;charset=utf8';
+    private $login='root';
+    private $mdp='';
 
+    public function __construct(){
+        $this->con = new Connection($this->phraseComplique,$this->login,$this->mdp);
+    }
+
+    //ajouterNews
+    public function insertNews($n){
+        $requete="insert into news values(?,?,?,?,?)";
+        $valeurs=[
+            "$n->id" => PDO::PARAM_INT,
+            "$n->date" => PDO::PARAM_STR,
+            "$n->nomSite" => PDO::PARAM_STR,
+            "$n->url" => PDO::PARAM_STR,
+            "$n->description" => PDO::PARAM_STR
+        ];
+        $this->con->executeQuery($requete, $valeurs);
+    }
+
+    //supprimerNews
+    //(par id car on a pas besoin d'instancier une news à chaque fois que l'on veux supprimer de cette maniere)
+    public function deleteNews($id){
+        $requete="delete from news where id=?";
+        $valeurs=[
+            "$id" => PDO::PARAM_INT
+        ];
+
+        $this->con->executeQuery($requete, $valeurs);
+    }
+
+    public function getDisplay(){
+        $requete="select * from news";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res;
+    }
+
+    //-----------------------------------------------------------
+
+    public function display(){
+        $requete="select * from news";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        $this->con->displayResults($res);
+    }
+
+    public function displayByNews($n){
+        $requete="select * from news where id=?";
+        $valeurs=[
+            "$n->id" => PDO::PARAM_INT
+        ];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        $this->con->displayResults($res);
+    }
 }

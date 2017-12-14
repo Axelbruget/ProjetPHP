@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: julia
- * Date: 28/11/2017
- * Time: 14:17
- */
 
 class ClientGateway
 {
@@ -24,7 +18,7 @@ class ClientGateway
             "$p->id" => PDO::PARAM_INT,
             "$p->login" => PDO::PARAM_STR,
             "$p->mdp" => PDO::PARAM_STR,
-            "$p->isAdmin" => PDO::PARAM_INT
+            "$p->status" => PDO::PARAM_STR
         ];
         $this->con->executeQuery($requete, $valeurs);
     }
