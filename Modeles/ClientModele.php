@@ -20,8 +20,6 @@ class ClientModele
     }
 
     public function connection(){
-        echo "session";
-        var_dump($_SESSION);
         return $this->cg->findClient($_SESSION['login'],$_SESSION['password']);
     }
 

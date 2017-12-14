@@ -58,18 +58,14 @@ class ClientGateway
     }
 
     public function findClient($login,$password){
-        var_dump($login);
-        var_dump($password);
         $requete="select login, isAdmin from client2 where login=? and password=?";
         $valeurs=array(
             "$login" => PDO::PARAM_STR,
             "$password" => PDO::PARAM_STR
         );
-        echo "valeurs";
-        var_dump($valeurs);
         $this->con->executeQuery($requete, $valeurs);
         $res=$this->con->getResults();
-        var_dump($res);
+
         if($res==NULL){
             return false;
         }

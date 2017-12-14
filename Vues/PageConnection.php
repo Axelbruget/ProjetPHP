@@ -6,9 +6,7 @@
 </head>
 <body>
 	<pre>
-Bonjour
-
-<form method="POST">
+        <form method="POST">
 nom d'utilisateur	<input type="text" name="login"/>
 mot de passe	 	<input type="password" name="password"/>
 <input type="submit" name="var" value="Envoyer"/>

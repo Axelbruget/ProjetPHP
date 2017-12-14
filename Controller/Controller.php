@@ -33,10 +33,12 @@ class Controller
             if($modele->connection()==true){
                 require("Vues/PageBienvenue.php");
             }
+
             else{
                 echo "login ou mdp invalide.<br/>";
                 require("Vues/PageConnection.php");
             }
+
         }
         else{
             echo "Erreur de saisie.<br/>";
