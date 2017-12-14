@@ -11,10 +11,16 @@ class Controller
             $action = null;
         }
         $rep=__DIR__.'/../';
-        switch($action){
-            case null:require($rep."Vues/PageConnection.php");break;
-            case 'valider': $this->seConnecter();break;
-            default :echo "autre erreur";break;
+        switch($action) {
+            case null:
+                require($rep . "Vues/PageConnection.php");
+                break;
+            case 'valider':
+                $this->seConnecter();
+                break;
+            default :
+                echo "autre erreur";
+                break;
         }
     }
 
@@ -28,8 +34,8 @@ class Controller
             $_SESSION['clientCourant']->setId($modele->connection());
             if($_SESSION['clientCourant']->getId()!=-1){
                 $_SESSION['clientCourant']->setStatut($modele->getStatut($_SESSION['clientCourant']->getId()));
-                var_dump($_SESSION['clientCourant']);
                 if($_SESSION['clientCourant']->getId()==2){ //juguigon + lumiere = accès à une partie ou je test des trucs
+                    var_dump($_SESSION);
                     require("Vues/PageAdmin.php");
                 }
                 else {

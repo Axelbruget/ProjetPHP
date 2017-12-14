@@ -15,12 +15,12 @@ class ClientModele
 
     //seConnecter();
     public function connection(){
-        return $this->cg->findClient($_SESSION['login'],$_SESSION['password']);
+        return $this->cg->findClient($_SESSION['clientCourant']->getLogin(),$_SESSION['clientCourant']->getMdp());
     }
 
     //savoir le status
     public function getStatut(){
-        return $this->cg->getStatus($_SESSION['id']);
+        return $this->cg->getStatut($_SESSION['clientCourant']->getId());
     }
 
     //ajouterClient

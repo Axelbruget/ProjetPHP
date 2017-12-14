@@ -9,7 +9,7 @@
 class ClientGateway
 {
     private $con;
-    private $phraseComplique='mysql:host=localhost;dbname=test;charset=utf8';
+    private $phraseComplique='mysql:host=localhost;dbname=sitedenewsbdd;charset=utf8';
     private $login='root';
     private $mdp='';
 
@@ -57,7 +57,7 @@ class ClientGateway
         }
     }
 
-    public function getStatus($id){
+    public function getStatut($id){
         $requete="select statut from client2 where id=?";
         $valeurs=array(
             "$id" => PDO::PARAM_INT
