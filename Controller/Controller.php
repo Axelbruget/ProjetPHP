@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: julia
- * Date: 28/11/2017
- * Time: 14:11
- */
 
 class Controller
 {
@@ -19,26 +13,34 @@ class Controller
         $rep=__DIR__.'/../';
         switch($action){
             case null:require($rep."Vues/PageConnection.php");break;
-            case 'valider': $this->ajouterClient();break;
-            default :echo "gna";break;
+            case 'valider': $this->seConnecter();break;
+            default :echo "autre erreur";break;
         }
     }
 
-    public function ajouterClient(){
-        //Ca marche pas si le mdp et le login sont les memes
-        $_SESSION['login']=$_REQUEST['login'];
-        $_SESSION['password']=$_REQUEST['password'];
-        if($_SESSION['login']!=NULL&&$_SESSION['password']!=NULL){
+    //seConnecter
+    //Ca marche pas si le mdp et le login sont les memes
+    public function seConnecter(){
+        $_SESSION['clientCourant']=new Client("-1",$_REQUEST['login'],$_REQUEST['password'],"undifined");
+        if(($_SESSION['clientCourant']->getLogin()!=NULL&&$_SESSION['clientCourant']->getMdp()!=NULL)
+            &&($_SESSION['clientCourant']->getLogin()!=$_SESSION['clientCourant']->getMdp())){
             $modele=new ClientModele();
-            if($modele->connection()==true){
-                require("Vues/PageBienvenue.php");
+            $_SESSION['clientCourant']->setId($modele->connection());
+            if($_SESSION['clientCourant']->getId()!=-1){
+                $_SESSION['clientCourant']->setStatut($modele->getStatut($_SESSION['clientCourant']->getId()));
+                var_dump($_SESSION['clientCourant']);
+                if($_SESSION['clientCourant']->getId()==2){ //juguigon + lumiere = accès à une partie ou je test des trucs
+                    require("Vues/PageAdmin.php");
+                }
+                else {
+                    require("Vues/PageBienvenue.php");
+                }
             }
 
             else{
                 echo "login ou mdp invalide.<br/>";
                 require("Vues/PageConnection.php");
             }
-
         }
         else{
             echo "Erreur de saisie.<br/>";
@@ -56,5 +58,5 @@ class Controller
 //afficherLesClient
 //supprimerClient
 //choisirUnClient
-//seConnecter
+
 //seDeconnecter

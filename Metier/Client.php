@@ -1,23 +1,43 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: julia
- * Date: 28/11/2017
- * Time: 14:06
- */
 
 class Client
 {
-    private $id;
+    private $id; //-1 si non définis
     private $login;
     private $mdp;
-    private $isAdmin; //0 : client, 1 : admin
+    private $statut; //"client","admin","superAdmin","undifined"
 
-    public function __construct($id,$login,$mdp, $isAdmin){
+    public function __construct($id,$login,$mdp, $statut){
         $this->id=$id;
         $this->login=$login;
         $this->mdp=$mdp;
-        $this->isAdmin=$isAdmin;
+        $this->statut=$statut;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+    public function getLogin(){
+        return $this->login;
+    }
+    public function getMdp(){
+        return $this->mdp;
+    }
+    public function getStatut(){
+        return $this->statut;
+    }
+
+    public function setId($id){
+        $this->id=$id;
+    }
+    public function setLogin($login){
+        $this->login=$login;
+    }
+    public function setMdp($mdp){
+        $this->mdp=$mdp;
+    }
+    public function setStatut($statut){
+        $this->statut=$statut;
     }
 
     public function __toString()

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: julia
- * Date: 28/11/2017
- * Time: 14:19
- */
 
 class ClientModele
 {
@@ -19,13 +13,18 @@ class ClientModele
         $this->cg->display();
     }
 
+    //seConnecter();
     public function connection(){
         return $this->cg->findClient($_SESSION['login'],$_SESSION['password']);
+    }
+
+    //savoir le status
+    public function getStatut(){
+        return $this->cg->getStatus($_SESSION['id']);
     }
 
     //ajouterClient
     //supprimerClient
     //choisirUnClient
-    //seConnecter();
     //seDeconnecter();
 }

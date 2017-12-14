@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 28 Novembre 2017 à 14:25
+-- Généré le :  Jeu 14 Décembre 2017 à 21:12
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -40,7 +40,30 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 INSERT INTO `client` (`id`, `nom`, `prenom`, `login`, `mdp`) VALUES
 (1, 'Guigon', 'Julian', 'Tiskull', 'root'),
+(2, 'Gachon', 'Julien', 'Dota', 'tiny'),
+(1, 'Guigon', 'Julian', 'Tiskull', 'root'),
 (2, 'Gachon', 'Julien', 'Dota', 'tiny');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `client2`
+--
+
+CREATE TABLE IF NOT EXISTS `client2` (
+  `id` int(11) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `statut` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `client2`
+--
+
+INSERT INTO `client2` (`id`, `login`, `password`, `statut`) VALUES
+(1, 'root', 'ents', 'admin'),
+(2, 'juguigon', 'lumiere', 'admin');
 
 -- --------------------------------------------------------
 
@@ -57,6 +80,9 @@ CREATE TABLE IF NOT EXISTS `table1` (
 --
 
 INSERT INTO `table1` (`nom`) VALUES
+('b'),
+('d'),
+('d'),
 ('b'),
 ('d'),
 ('d');
@@ -78,6 +104,8 @@ CREATE TABLE IF NOT EXISTS `table2` (
 --
 
 INSERT INTO `table2` (`nom`, `prenom`, `valeur`) VALUES
+('julian', 'guigon', 4),
+('eva', 'leuci', 13),
 ('julian', 'guigon', 4),
 ('eva', 'leuci', 13);
 

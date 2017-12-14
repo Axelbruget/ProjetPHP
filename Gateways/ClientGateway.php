@@ -17,6 +17,7 @@ class ClientGateway
         $this->con = new Connection($this->phraseComplique,$this->login,$this->mdp);
     }
 
+    //ajouterClient
     public function insertClient($p){
         $requete="insert into client2 values(?,?,?,?)";
         $valeurs=[
@@ -28,14 +29,45 @@ class ClientGateway
         $this->con->executeQuery($requete, $valeurs);
     }
 
-    public function deleteClient($p){
+    //supprimerClient
+    //(par id car on a pas besoin d'instancier un client à chaque fois que l'on veux supprimer de cette maniere)
+    public function deleteClient($id){
         $requete="delete from client2 where id=?";
         $valeurs=[
-            "$p->id" => PDO::PARAM_INT
+            "$id" => PDO::PARAM_INT
         ];
 
         $this->con->executeQuery($requete, $valeurs);
     }
+
+    //trouverUnClient : renvoie l'id si trouvé, -1 sinon
+    public function findClient($login,$password){
+        $requete="select id from client2 where login=? and password=?";
+        $valeurs=array(
+            "$login" => PDO::PARAM_STR,
+            "$password" => PDO::PARAM_STR
+        );
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        if($res==NULL){
+            return -1;
+        }
+        else{
+            return $res[0][0];
+        }
+    }
+
+    public function getStatus($id){
+        $requete="select statut from client2 where id=?";
+        $valeurs=array(
+            "$id" => PDO::PARAM_INT
+        );
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res[0][0];
+    }
+
+    //-----------------------------------------------------------
 
     public function display(){
         $requete="select * from client2";
@@ -55,22 +87,5 @@ class ClientGateway
         $this->con->executeQuery($requete, $valeurs);
         $res=$this->con->getResults();
         $this->con->displayResults($res);
-    }
-
-    public function findClient($login,$password){
-        $requete="select login, isAdmin from client2 where login=? and password=?";
-        $valeurs=array(
-            "$login" => PDO::PARAM_STR,
-            "$password" => PDO::PARAM_STR
-        );
-        $this->con->executeQuery($requete, $valeurs);
-        $res=$this->con->getResults();
-
-        if($res==NULL){
-            return false;
-        }
-        else{
-            return true;
-        }
     }
 }

@@ -8,4 +8,5 @@
     require_once("Controller/Controller.php");
     require_once("Modeles/ClientModele.php");
     require_once("Gateways/ClientGateway.php");
+    require_once("Metier/Client.php");
 ?>
