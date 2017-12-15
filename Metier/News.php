@@ -2,11 +2,11 @@
 
 class News
 {
-    private $id;
-    private $date;
-    private $nomSite;
-    private $url;
-    private $description;
+    public $id;
+    public $date;
+    public $nomSite;
+    public $url;
+    public $description;
 
     public function __construct($id,$date,$nomSite,$url,$description)
     {
