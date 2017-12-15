@@ -44,4 +44,18 @@ class Connection extends PDO
             echo "<br/>";
         }
     }
+
+    public function returnResults($res){
+        foreach ($res as $line){
+            $i=0;
+            foreach ($line as $arg){
+                $i++;
+            }
+            for($j=0;$j<($i/2);$j++){
+                return $line[$j];
+                echo "<br/>";
+            }
+            echo "<br/>";
+        }
+    }
 }

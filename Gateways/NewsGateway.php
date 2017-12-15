@@ -20,6 +20,7 @@ class NewsGateway
     //ajouterNews
     public function insertNews($n){
         $requete="insert into news values(?,?,?,?,?)";
+
         $valeurs=[
             "$n->id" => PDO::PARAM_INT,
             "$n->date" => PDO::PARAM_STR,
@@ -70,5 +71,17 @@ class NewsGateway
         $this->con->executeQuery($requete, $valeurs);
         $res=$this->con->getResults();
         $this->con->displayResults($res);
+    }
+
+    // Retourne le nombre de news présentes dans la liste
+
+    public function getNombreDeNews(){
+        $requete="select count(*) from news";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $this->con->ReturnResults($res);
+
     }
 }
