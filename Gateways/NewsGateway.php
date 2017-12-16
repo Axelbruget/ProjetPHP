@@ -106,8 +106,8 @@ class NewsGateway
     }
 
 
-    public function getQuelquesNews($nb){
-        $requete="SELECT * FROM `news` order by id asc limit $nb";
+    public function getQuelquesNews($nbNews,$newsDeDepart){
+        $requete="SELECT * FROM `news` order by id asc limit $nbNews,$newsDeDepart";
         $valeurs=[];
 
         $this->con->executeQuery($requete, $valeurs);

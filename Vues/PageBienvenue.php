@@ -21,13 +21,15 @@ $nbPages = ceil($nb/$nbNewsParPage);
 echo '<ol class="ListeNews">';
 
 for ( $i = 0; $i<$nb; $i++){
-
     $news = $newsGateway->getNews($i); // récupère la news sous forme d'un tableau à 2 dimensions
     echo '<li><a target="_blank" href="'.$news[0]['url'].'">'.$news[0]['nomSite'].'</a> ('.$news[0]['date'].')</li>';
-
 }
 
 echo '</ol>';
+
+for ( $z = 1; $z<= $nbPages;$z++){
+    echo '<a href="'.$z.'">'.$z.'.'.'</a>';
+}
 
 
 
