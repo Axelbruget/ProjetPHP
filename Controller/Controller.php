@@ -29,6 +29,7 @@ class Controller
     //seConnecter
     //Ca marche pas si le mdp et le login sont les memes
     public function seConnecter(){
+
         $modele=new ClientModele();
         $_SESSION['clientCourant']=new Client("-1",$_REQUEST['login'],$_REQUEST['password'],"undifined");
         if(($_SESSION['clientCourant']->getLogin()!=NULL&&$_SESSION['clientCourant']->getMdp()!=NULL)

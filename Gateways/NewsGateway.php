@@ -84,4 +84,13 @@ class NewsGateway
         return $this->con->ReturnResults($res);
 
     }
+
+    public function deleteAllNews(){
+        $requete="delete from news";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+
+
+    }
 }

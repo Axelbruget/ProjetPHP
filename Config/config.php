@@ -9,4 +9,6 @@
     require_once("Modeles/NewsModele.php");
     require_once("Gateways/NewsGateway.php");
     require_once("Metier/News.php");
+
+    require_once("Loading/LoadingDataBase.php");
 ?>
