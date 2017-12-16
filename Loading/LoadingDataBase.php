@@ -16,6 +16,7 @@ foreach ($rss->channel->item as $item) {
             $i = $newsGateway->getNombreDeNews();
 
             $datetime = date_create($item->pubDate);
+
             $date = date_format($datetime, "Y-m-d H:i:s");
 
             $news = new News($i, $date, $item->title, $item->link, $item->description);

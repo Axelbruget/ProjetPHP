@@ -20,6 +20,10 @@ class Controller
             case 'valider':
                 $this->seConnecter();
                 break;
+            case 'ChargerBase':
+                require_once("Loading/LoadingDataBase.php");
+                require($rep . "Vues/PageConnection.php");
+                break;
             default :
                 echo "autre erreur";
                 break;
