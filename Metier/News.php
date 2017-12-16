@@ -8,13 +8,14 @@ class News
     public $url;
     public $description;
 
-    public function __construct($id,$date,$nomSite,$url,$description)
+    public function __construct($id,$date,$nomSite,$url,$description,$image)
     {
         $this->id=$id;
         $this->date=$date;
         $this->nomSite=$nomSite;
         $this->url=$url;
         $this->description=$description;
+        $this->image=$image;
     }
     public function __toString()
     {
@@ -36,6 +37,9 @@ class News
     public function getDescription(){
         return $this->description;
     }
+    public function getImage(){
+        return $this->image;
+    }
 
     public function setId($id){
         $this->id=$id;
@@ -51,5 +55,8 @@ class News
     }
     public function setDescription($description){
         $this->description=$description;
+    }
+    public function setImage($image){
+        $this->image=$image;
     }
 }

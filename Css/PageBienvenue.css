@@ -1,6 +1,11 @@
 
+body{
+    font-family: Arial;
+}
+
 .ListeNews, ul{
     margin: 5px;
+    list-style: none;
 }
 
 a{
@@ -9,7 +14,7 @@ a{
 }
 
 a:hover{
-    color:red;
+    color:darkblue;
 }
 
 .ListeNews{
@@ -18,4 +23,8 @@ a:hover{
 
 h1{
     text-align: center;
+}
+
+.Sec{
+    left: 50px;
 }

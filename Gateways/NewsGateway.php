@@ -19,14 +19,15 @@ class NewsGateway
 
     //ajouterNews
     public function insertNews($n){
-        $requete="insert into news values(?,?,?,?,?)";
+        $requete="insert into news values(?,?,?,?,?,?)";
 
         $valeurs=[
             "$n->id" => PDO::PARAM_INT,
             "$n->date" => PDO::PARAM_STR,
             "$n->nomSite" => PDO::PARAM_STR,
             "$n->url" => PDO::PARAM_STR,
-            "$n->description" => PDO::PARAM_STR
+            "$n->description" => PDO::PARAM_STR,
+            "$n->image" => PDO::PARAM_STR
         ];
         $this->con->executeQuery($requete, $valeurs);
     }

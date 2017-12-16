@@ -30,7 +30,12 @@ echo '<ul class="ListeNews">';
 
 for ( $i = 0; $i<$nbNewsParPage; $i++){
     $news = $newsGateway->getNews($i); // récupère la news sous forme d'un tableau à 2 dimensions
-    echo '<li>'.$news[0]['date'].' - .<a target="_blank" href="'.$news[0]['url'].'">'.$news[0]['nomSite'].' : </a><a target="_blank" href="'.$news[0]['url'].'">'.$news[0]['description'].'</a></li>';
+
+    // Affichage de la news #compliqué
+    echo '<li>'.$news[0]['date'].' - 
+    <a target="_blank" href="'.$news[0]['url'].'"><img height="15px;" src="'.$news[0]['image'].'"> '.$news[0]['nomSite'].' : </a>
+    <a class="Sec" target="_blank" href="'.$news[0]['url'].'">'.$news[0]['description'].'</a>
+    </li>';
 }
 
 echo '</ul>';
