@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="587bb801-fa7f-4bcd-b119-2327babc8768" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Css/PageBienvenue.css" afterPath="$PROJECT_DIR$/Css/PageBienvenue.css" />
-      <change beforePath="$PROJECT_DIR$/Gateways/NewsGateway.php" afterPath="$PROJECT_DIR$/Gateways/NewsGateway.php" />
-      <change beforePath="$PROJECT_DIR$/Loading/LoadingDataBase.php" afterPath="$PROJECT_DIR$/Loading/LoadingDataBase.php" />
-      <change beforePath="$PROJECT_DIR$/Metier/News.php" afterPath="$PROJECT_DIR$/Metier/News.php" />
-      <change beforePath="$PROJECT_DIR$/Vues/PageBienvenue.php" afterPath="$PROJECT_DIR$/Vues/PageBienvenue.php" />
+      <change beforePath="$PROJECT_DIR$/Bdd/sitedenewsbdd.sql" afterPath="$PROJECT_DIR$/Bdd/sitedenewsbdd.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,17 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Connection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Connection/Connection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PageBienvenue.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PageBienvenue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vues/PageBienvenue.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -48,6 +34,16 @@
                 <marker date="1513451057952" expanded="true" signature="749:841" ph="..." />
                 <marker date="1513451057952" expanded="true" signature="749:1006" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sitedenewsbdd.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Bdd/sitedenewsbdd.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="67" column="291" lean-forward="false" selection-start-line="67" selection-start-column="291" selection-end-line="67" selection-end-column="291" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,6 +168,7 @@
         <option value="$PROJECT_DIR$/Metier/News.php" />
         <option value="$PROJECT_DIR$/Gateways/NewsGateway.php" />
         <option value="$PROJECT_DIR$/Vues/PageBienvenue.php" />
+        <option value="$PROJECT_DIR$/Bdd/sitedenewsbdd.sql" />
       </list>
     </option>
   </component>
@@ -349,12 +346,12 @@
       <workItem from="1513422566844" duration="3719000" />
       <workItem from="1513427230807" duration="2307000" />
       <workItem from="1513435496144" duration="6041000" />
-      <workItem from="1513445271232" duration="3806000" />
+      <workItem from="1513445271232" duration="4024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76489000" />
+    <option name="totallyTimeSpent" value="76707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -527,13 +524,6 @@
     <entry file="file://$PROJECT_DIR$/Bdd/test.sql" />
     <entry file="file://$PROJECT_DIR$/Metier/LoadingBase.php" />
     <entry file="file://$PROJECT_DIR$/Modeles/PageConnection.php" />
-    <entry file="file://$PROJECT_DIR$/Bdd/sitedenewsbdd.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vues/Test.php" />
     <entry file="file://$PROJECT_DIR$/Modeles/ClientModele.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -679,6 +669,14 @@
             <marker date="1513451057952" expanded="true" signature="749:841" ph="..." />
             <marker date="1513451057952" expanded="true" signature="749:1006" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bdd/sitedenewsbdd.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="67" column="291" lean-forward="false" selection-start-line="67" selection-start-column="291" selection-end-line="67" selection-end-column="291" />
+          <folding />
         </state>
       </provider>
     </entry>
