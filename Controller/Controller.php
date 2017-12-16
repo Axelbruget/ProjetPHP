@@ -22,7 +22,7 @@ class Controller
                 break;
             case 'ChargerBase':
                 require_once("Loading/LoadingDataBase.php");
-                require($rep . "Vues/PageConnection.php");
+                require_once("Vues/PageConnection.php");
                 break;
             default :
                 echo "autre erreur";

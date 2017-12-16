@@ -104,4 +104,14 @@ class NewsGateway
         $res=$this->con->getResults();
         return $res;
     }
+
+
+    public function getQuelquesNews($nb){
+        $requete="SELECT * FROM `news` order by id asc limit $nb";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res;
+    }
 }
