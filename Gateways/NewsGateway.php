@@ -62,10 +62,10 @@ class NewsGateway
         $this->con->displayResults($res);
     }
 
-    public function displayByNews($n){
+    public function displayByNews($id){
         $requete="select * from news where id=?";
         $valeurs=[
-            "$n->id" => PDO::PARAM_INT
+            "$id" => PDO::PARAM_INT
         ];
 
         $this->con->executeQuery($requete, $valeurs);
@@ -92,5 +92,16 @@ class NewsGateway
         $this->con->executeQuery($requete, $valeurs);
 
 
+    }
+
+    public function getNews($id){
+        $requete="select * from news where id=?";
+        $valeurs=[
+            "$id" => PDO::PARAM_INT
+        ];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res;
     }
 }

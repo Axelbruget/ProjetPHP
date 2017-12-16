@@ -1,0 +1,8 @@
+.ListeNews{
+    border: solid black 1px;
+    margin: 10px;
+}
+
+.ListeNews, li{
+    margin: 5px;
+}
