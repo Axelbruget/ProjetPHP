@@ -12,18 +12,17 @@ $i = 0;
 
 foreach ($rss->channel->item as $item) {
 
-        if ( $i < 49 ) { // charge seulement 50 news dans la base sinon méga LONG !
+        if ( $i < 29 ) { // charge seulement quelques news dans la base sinon méga LONG !
 
             $i = $newsGateway->getNombreDeNews();
 
-            // La date est une balise <dc:date> donc obligé de passer par dc pour récupérer la date
+            // La date est une balise <dc:date> donc obligé de passer par cette méthode pour récupérer la date
             $dc = $item->children('http://purl.org/dc/elements/1.1/');
 
             $datetime = date_create($dc->date);
 
             $date = date_format($datetime, "Y-m-d H:i:s");
-
-            $news = new News($i, $date, $item->title, $item->link, $item->description);
+            $news = new News($i, $date, $dc->publisher, $item->link, $item->title);
             $newsGateway->insertNews($news);
         }
 

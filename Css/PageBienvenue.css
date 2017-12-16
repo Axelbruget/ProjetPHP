@@ -1,8 +1,21 @@
-.ListeNews{
-    border: solid black 1px;
-    margin: 10px;
+
+.ListeNews, ul{
+    margin: 5px;
 }
 
-.ListeNews, li{
-    margin: 5px;
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    color:red;
+}
+
+.ListeNews{
+    border: solid 2px black;
+}
+
+h1{
+    text-align: center;
 }
