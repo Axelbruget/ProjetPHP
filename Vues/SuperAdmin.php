@@ -61,7 +61,24 @@ $nombreAdmins = $clientGateway->getNombreAdmins();
     ?>
 </table>
 
+<h2>Ajouter un Client :</h2>
+<form method="POST">
+    Login : <input type="text" name="login"/>
+    Password : <input type="password" name="password"/>
 
+    <input type="submit" name="action" value="AjouterClient"/>
+
+
+</form>
+
+<h2>Ajouter un Admin :</h2>
+<form method="POST">
+    Login : <input type="text" name="login"/>
+    Password : <input type="password" name="password"/>
+
+    <input type="submit" name="action" value="AjouterAdmin"/>
+
+</form>
 
 
 </body>

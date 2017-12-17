@@ -18,7 +18,7 @@ class ClientGateway
             "$p->id" => PDO::PARAM_INT,
             "$p->login" => PDO::PARAM_STR,
             "$p->mdp" => PDO::PARAM_STR,
-            "$p->status" => PDO::PARAM_STR
+            "$p->statut" => PDO::PARAM_STR
         ];
         $this->con->executeQuery($requete, $valeurs);
     }
@@ -90,6 +90,15 @@ class ClientGateway
         $this->con->executeQuery($requete, $valeurs);
         $res=$this->con->getResults();
         return $res;
+    }
+
+    public function getNombreUtilisateurs(){
+        $requete="select count(*) from client2";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res[0][0];
     }
 
     public function getNombreClients(){

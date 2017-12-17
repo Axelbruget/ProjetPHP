@@ -17,12 +17,18 @@ class Controller
             case null:
                 require($rep . "Vues/PageConnection.php");
                 break;
-            case 'valider':
+            case 'Valider':
                 $this->seConnecter();
                 break;
             case 'ChargerBase':
                 require_once("Loading/LoadingDataBase.php");
                 require_once("Vues/PageConnection.php");
+                break;
+            case 'AjouterClient':
+                $this->ajouterUtilisateur('client');
+                break;
+            case 'AjouterAdmin':
+                $this->ajouterUtilisateur('admin');
                 break;
             default :
                 echo "autre erreur";
@@ -72,6 +78,18 @@ class Controller
         }
         echo "fin";
     }
+
+    public function ajouterUtilisateur($type){
+        $clientgateway = new ClientGateway();
+        $id = $clientgateway->getNombreUtilisateurs();
+        $_SESSION['clientCourant']=new Client($id,$_REQUEST['login'],$_REQUEST['password'],$type);
+        $clientgateway = new ClientGateway();
+        $clientgateway->insertClient($_SESSION['clientCourant']);
+        require_once("Vues/SuperAdmin.php");
+    }
+
+
+
 }
 
 //neRienFaire

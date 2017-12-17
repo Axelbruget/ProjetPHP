@@ -13,12 +13,11 @@
 </p>
 	<pre>
 <form method="POST">
-Nom d'utilisateur	<input type="text" name="login"/>
-Mot de passe	 	<input type="password" name="password"/>
 
-<input type="submit" name="var" value="Envoyer"/>
-<input type="hidden" name="action" value="valider"/>
+Nom d'utilisateur	<input type="text" name="login" value=""/>
+Mot de passe	 	<input type="password" name="password" value=""/>
 
+<input type="submit" name="action" value="Valider"/>
 
 <input type="submit" name="action" value="ChargerBase"/>
 </form>

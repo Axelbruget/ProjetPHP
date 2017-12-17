@@ -2,10 +2,10 @@
 
 class Client
 {
-    private $id; //-1 si non définis
-    private $login;
-    private $mdp;
-    private $statut; //"client","admin","superAdmin","undifined"
+    public $id; //-1 si non définis
+    public $login;
+    public $mdp;
+    public $statut; //"client","admin","superAdmin","undifined"
 
     public function __construct($id,$login,$mdp, $statut){
         $this->id=$id;
