@@ -100,4 +100,22 @@ class ClientGateway
         $res=$this->con->getResults();
         return $res[0][0];
     }
+
+    public function getAdmins(){
+        $requete="select * from client2 where statut='admin'";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res;
+    }
+
+    public function getNombreAdmins(){
+        $requete="select count(*) from client2 where statut='admin'";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res[0][0];
+    }
 }
