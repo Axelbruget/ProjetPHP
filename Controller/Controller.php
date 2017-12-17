@@ -41,13 +41,15 @@ class Controller
             $_SESSION['clientCourant']->setId($modele->connection());
             if($_SESSION['clientCourant']->getId()!=-1){
                 $_SESSION['clientCourant']->setStatut($modele->getStatut($_SESSION['clientCourant']->getId()));
-                if($_SESSION['clientCourant']->getId()==2){ //juguigon + lumiere = accès à une partie ou je test des trucs
-                    var_dump($_SESSION);
+                if($_SESSION['clientCourant']->getStatut()=='admin'){ // si admin
                     require("Vues/PageAdmin.php");
                     $this->afficherLesNews();
                 }
-                else {
+                else if ($_SESSION['clientCourant']->getStatut()=='client'){ // si client
                     require("Vues/PageBienvenue.php");
+                }
+                else if ($_SESSION['clientCourant']->getStatut()=='superadmin'){ // si superadmin
+                    require("Vues/SuperAdmin.php");
                 }
             }
             else{

@@ -82,4 +82,22 @@ class ClientGateway
         $res=$this->con->getResults();
         $this->con->displayResults($res);
     }
+
+    public function getClients(){
+        $requete="select * from client2 where statut='client'";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res;
+    }
+
+    public function getNombreClients(){
+        $requete="select count(*) from client2 where statut='client'";
+        $valeurs=[];
+
+        $this->con->executeQuery($requete, $valeurs);
+        $res=$this->con->getResults();
+        return $res[0][0];
+    }
 }
