@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.1.14
+-- http://www.phpmyadmin.net
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 16 déc. 2017 à 19:07
--- Version du serveur :  5.7.19
--- Version de PHP :  7.0.23
+-- Client :  127.0.0.1
+-- Généré le :  Lun 18 Décembre 2017 à 18:21
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `sitedenewsbdd`
@@ -28,7 +26,6 @@ SET time_zone = "+00:00";
 -- Structure de la table `client2`
 --
 
-DROP TABLE IF EXISTS `client2`;
 CREATE TABLE IF NOT EXISTS `client2` (
   `id` int(11) NOT NULL,
   `login` varchar(100) NOT NULL,
@@ -37,12 +34,14 @@ CREATE TABLE IF NOT EXISTS `client2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `client2`
+-- Contenu de la table `client2`
 --
 
 INSERT INTO `client2` (`id`, `login`, `password`, `statut`) VALUES
-(1, 'root', 'ents', 'admin'),
-(2, 'juguigon', 'lumiere', 'admin');
+(1, 'Hello', '123', 'client'),
+(0, 'superadmin', 'super', 'superadmin'),
+(2, 'root', 'ents', 'client'),
+(3, 'juguigon', 'lumiere', 'admin');
 
 -- --------------------------------------------------------
 
@@ -50,7 +49,6 @@ INSERT INTO `client2` (`id`, `login`, `password`, `statut`) VALUES
 -- Structure de la table `news`
 --
 
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(50) NOT NULL,
   `date` datetime NOT NULL,
@@ -61,41 +59,40 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `news`
+-- Contenu de la table `news`
 --
 
 INSERT INTO `news` (`id`, `date`, `nomSite`, `url`, `description`, `image`) VALUES
-(0, '2017-12-16 19:00:34', 'Gameblog', 'http://feedproxy.google.com/~r/phoenixjp/~3/eG50E0OTPOo/71997-l-image-du-jour-la-meilleure-station-de-radio-de-tous-les-te', 'L\'image du jour : La meilleure station de radio de tous les temps', 'http://www.phoenixjp.net/news/fr/logos/logoGBLOG.gif'),
-(1, '2017-12-16 18:41:14', 'Generation-NT', 'http://feedproxy.google.com/~r/phoenixjp/~3/zDQPShzM3Bw/oneplus-5-smartphone-android-oreo-beta-actualite-1949184.html', 'OnePlus 5 : la deuxième beta ouverte d\'Android Oreo disponible', 'http://www.phoenixjp.net/news/fr/logos/logoGENNT.gif'),
-(2, '2017-12-16 18:40:19', 'FredZone', 'http://feedproxy.google.com/~r/phoenixjp/~3/I-CphLsO_YU/la-lenovo-tab-4-8-plus-est-a-204-e-665', 'La Lenovo Tab 4 8 Plus est à 204 €', 'http://www.phoenixjp.net/news/fr/logos/logoFREDZONE.gif'),
-(3, '2017-12-16 18:21:40', 'Le comptoir du hardware', 'http://feedproxy.google.com/~r/phoenixjp/~3/R1LG8Q4GUbg/35400-un-premier-test-pour-la-sapphire-rx-vega-56-nitro-forcement-meilleure-que-la-carte-de-reference-et-cest-tant-mieux-.html', 'Un premier test pour la Sapphire RX Vega 56 Nitro+, forcément meilleure que la carte de référence et c\'est tant mieux !', 'http://www.phoenixjp.net/news/fr/logos/logoPUISSPC.gif'),
-(4, '2017-12-16 18:21:37', 'AlloCine', 'http://feedproxy.google.com/~r/phoenixjp/~3/o6pFwBQlBJo/fichearticle_gen_carticle=18669547.html', 'X-Files : un making of révèle de nouvelles images de la saison 11', 'http://www.phoenixjp.net/news/fr/logos/logoALLOCINE.gif'),
-(5, '2017-12-16 18:21:37', 'AlloCine', 'http://feedproxy.google.com/~r/phoenixjp/~3/8xOjLyyNCrM/fichearticle_gen_carticle=18669532.html', 'Andy Serkis : rencontre avec le roi de la motion capture', 'http://www.phoenixjp.net/news/fr/logos/logoALLOCINE.gif'),
-(6, '2017-12-16 18:21:00', 'Journal du Japon', 'http://feedproxy.google.com/~r/phoenixjp/~3/TUrQlQiuwfk/', 'Gaming Memories #05 : Spécial RPG de Noël (Final Fantasy/Phantasy Star)', 'http://www.phoenixjp.net/news/fr/logos/logoJDJAPON.gif'),
-(7, '2017-12-16 18:20:18', 'FredZone', 'http://feedproxy.google.com/~r/phoenixjp/~3/Y_AlOBGPpUI/asgardia-a-lance-son-premier-satellite-dans-lespace-554', 'Asgardia a lancé son premier satellite dans l’espace', 'http://www.phoenixjp.net/news/fr/logos/logoFREDZONE.gif'),
-(8, '2017-12-16 18:20:14', 'Numerama', 'http://feedproxy.google.com/~r/phoenixjp/~3/GChw5xn8fV0/314127-frigos-smartphones-compteurs-lanfr-veut-rassurer-sur-lexposition-aux-ondes-dans-la-vie-courante.html', 'Frigos, smartphones, compteurs : un site pour apaiser le débat sur l’exposition aux ondes', 'http://www.phoenixjp.net/news/fr/logos/logoNUMERAMA.gif'),
-(9, '2017-12-16 18:01:53', 'GinjFo', 'http://feedproxy.google.com/~r/phoenixjp/~3/R__qS-aKO-M/far-cry-5-un-trailer-100-bourrin-debarque-20171216', 'Far Cry 5, un trailer 100% bourrin débarque', 'http://www.phoenixjp.net/news/fr/logos/logoGINJFO.gif'),
-(10, '2017-12-16 18:01:51', 'AlloCine', 'http://feedproxy.google.com/~r/phoenixjp/~3/sSzWBngz5Ec/fichearticle_gen_carticle=18669546.html', 'George Clooney arrive sur Netflix avec une mini-série sur le scandale du Watergate', 'http://www.phoenixjp.net/news/fr/logos/logoALLOCINE.gif'),
-(11, '2017-12-16 18:01:50', 'AlloCine', 'http://feedproxy.google.com/~r/phoenixjp/~3/IojhPLpEe28/', 'Best-of 2017 : le meilleur et le pire des séries', 'http://www.phoenixjp.net/news/fr/logos/logoALLOCINE.gif'),
-(12, '2017-12-16 18:01:39', 'Ere Numerique', 'http://feedproxy.google.com/~r/phoenixjp/~3/WV_aU2Z4W2M/samsung-galaxy-note-9-concept-video-devoile-ecran-borderless-article-35823-16.html', 'Samsung Galaxy Note 9 : un concept vidéo dévoile son écran borderless', 'http://www.phoenixjp.net/news/fr/logos/logoERENUM.gif'),
-(13, '2017-12-16 17:41:41', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/qE5cVrQOZEk/nintendo-chercher-partenaires-jeux-mobiles-894219', 'Nintendo cherche d\'autres partenaires pour développer ses futurs jeux mobiles', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(14, '2017-12-16 17:41:14', 'Clubic.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/wJ_COZjLQUE/article-839966-1-imprimante-3d-laquelle-acheter-2017-2018.html', 'Idée pour Noël : et si vous offriez... une imprimante 3D ?!', 'http://www.phoenixjp.net/news/fr/logos/logoCLUBIC.gif'),
-(15, '2017-12-16 17:41:13', 'Generation-NT', 'http://feedproxy.google.com/~r/phoenixjp/~3/Ctg-bPJT1cs/enceintes-connectees-objets-securite-faille-actualite-1949119.html', 'Enceintes connectées : une histoire de confiance mal placée', 'http://www.phoenixjp.net/news/fr/logos/logoGENNT.gif'),
-(16, '2017-12-16 17:40:30', 'Gameblog', 'http://feedproxy.google.com/~r/phoenixjp/~3/O_8iRktjA1I/72483-vivez-l-enregistrement-du-podcast-441-sur-gameblog-tv-lundi-', 'Vivez l\'enregistrement du Podcast 441 sur Gameblog TV lundi à 18h30 : L\'année PS4', 'http://www.phoenixjp.net/news/fr/logos/logoGBLOG.gif'),
-(17, '2017-12-16 17:40:18', 'FredZone', 'http://feedproxy.google.com/~r/phoenixjp/~3/IzeIVToobxk/lumidigi-z-pro-est-a-14966-e-554', 'L’Umidigi Z Pro est à 149,66 € (HK)', 'http://www.phoenixjp.net/news/fr/logos/logoFREDZONE.gif'),
-(18, '2017-12-16 17:21:28', 'JeuxOnLine', 'http://feedproxy.google.com/~r/phoenixjp/~3/lhm9MfRRT_E/tournois-mode-spectateur-eve-valkyrie', 'EVE Valkyrie : Des tournois et un mode spectateur pour EVE : Valkyrie', 'http://www.phoenixjp.net/news/fr/logos/logoJOLINE.gif'),
-(19, '2017-12-16 17:21:26', 'MacGeneration.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/OT151gYs58A/appel-temoins-pourquoi-avez-vous-achete-ou-comptez-acheter-un-imac-pro-100782', 'Appel à témoins : pourquoi avez-vous acheté (ou comptez acheter) un iMac Pro ?', 'http://www.phoenixjp.net/news/fr/logos/logoMACGEN.gif'),
-(20, '2017-12-16 17:20:23', 'Von Guru', 'http://feedproxy.google.com/~r/phoenixjp/~3/g1N-Q_75zf0/', '#HardwarePorn : quatres TITAN V et deux Xeon E5-2699 !', 'http://www.phoenixjp.net/news/fr/logos/logoVONGURU.gif'),
-(21, '2017-12-16 17:20:18', 'LesNumeriques', 'http://feedproxy.google.com/~r/phoenixjp/~3/dVoIwq-FWnA/huawei-vraie-alternative-a-samsung-apple-a3435.html', 'Entretien - ?Huawei : \'Une vraie alternative à Samsung et Apple\'', 'http://www.phoenixjp.net/news/fr/logos/logoLNUMERIQ.gif'),
-(22, '2017-12-16 17:09:47', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/yrXLgfAhQuU/gorgoa-jeu-enigme-images-iphone-ipad-894338', 'Les dessins faits main de Gorogoa s\'animent sur iPhone et iPad, pour une histoire envoutante', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(23, '2017-12-16 17:09:47', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/iaCNQ_-Yq9g/bon-plan-reduction-philips-hue-lampe-ampoule-iphone-894385', 'Promos du jour : ampoules et kits Hue et autres bons plans accessoires iPhone, juste avant Noël', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(24, '2017-12-16 17:09:47', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/d2H7ww4brwE/youtube-service-streaming-musical-2018-893915', 'YouTube pourrait lancer son service de streaming musical dès mars prochain', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(25, '2017-12-16 17:09:47', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/Ez2olpmMdPA/ou-acheter-airpods-disponible-894386', 'Où trouver des AirPods pour les glisser sous le sapin à Noël ?', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(26, '2017-12-16 17:09:47', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/6TSsO9AwCmw/apple-music-production-serie-moore-space-drama-894380', 'Apple poursuit ses efforts dans la vidéo et s\'offre le scénariste des séries télévisées Star Trek et Battlestar Galactica', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(27, '2017-12-16 17:09:47', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/ftcS6Vkxa10/itunes-windows-10-store-repousse-894377', 'L\'arrivée d’iTunes dans le Windows Store repoussée', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
-(28, '2017-12-16 17:09:44', 'Nautiljon', 'http://feedproxy.google.com/~r/phoenixjp/~3/j8qsxaBDmJI/hideo+yamamoto+de+retour+en+france+chez+delcourt-tonkam+avec+hikari-man-8625.html', 'Hideo Yamamoto de retour en France chez Delcourt/Tonkam avec Hikari-Man', 'http://www.phoenixjp.net/news/fr/logos/logoNAUTILJON.gif'),
-(29, '2017-12-16 17:09:44', 'Ecran Large', 'http://feedproxy.google.com/~r/phoenixjp/~3/iQfBjwOSeYc/1005317-brian-de-palma-tous-les-secrets-du-grand-cineaste-reunis-dans-un-grand-livre-indispensable-pour-noel', 'Brian De Palma : tous les secrets du grand cinéaste réunis dans un grand livre indispensable (pour Noël)', 'http://www.phoenixjp.net/news/fr/logos/logoECRANLARGE.gif');
-COMMIT;
+(0, '2017-12-18 18:02:12', 'Le Journal du Geek', 'http://feedproxy.google.com/~r/phoenixjp/~3/TXsBkT8r6js/', '[Critique] Jumanji : Bienvenue dans la Jungle', 'http://www.phoenixjp.net/news/fr/logos/logoJDGEEK.gif'),
+(1, '2017-12-18 18:02:05', 'Numerama', 'http://feedproxy.google.com/~r/phoenixjp/~3/o42EgtrZUGo/315617-bruno-le-maire-attaque-amazon-en-justice-pour-des-clauses-abusives.html', 'Bruno Le Maire attaque Amazon en justice pour des clauses abusives', 'http://www.phoenixjp.net/news/fr/logos/logoNUMERAMA.gif'),
+(2, '2017-12-18 18:01:58', 'Premiere Series', 'http://feedproxy.google.com/~r/phoenixjp/~3/Lo3YmSFeu_I/Les-5-meilleurs-jeux-de-Noel', 'Les 5 meilleurs jeux de Noël', 'http://www.phoenixjp.net/news/fr/logos/logoPREMIERE.gif'),
+(3, '2017-12-18 18:01:44', 'Ecran Large', 'http://feedproxy.google.com/~r/phoenixjp/~3/fd66NG0zZLQ/1007897-avengers-infinity-war-kevin-feige-promet-que-le-debut-du-film-sera-violent-avec-un-thanos-surpuissant', 'Avengers : Infinity War - Kevin Feige promet que le début du film sera violent, avec un Thanos surpuissant', 'http://www.phoenixjp.net/news/fr/logos/logoECRANLARGE.gif'),
+(4, '2017-12-18 18:01:42', 'AlloCine', 'http://feedproxy.google.com/~r/phoenixjp/~3/_-sKw8IljIU/fichearticle_gen_carticle=18669574.html', 'The OA : tournage imminent pour la saison 2', 'http://www.phoenixjp.net/news/fr/logos/logoALLOCINE.gif'),
+(5, '2017-12-18 18:01:36', 'AVCESAR.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/04deZ11YeUk/rush-de-noel-chargeur-5-ports-usb-a-63-soit-3750-deconomie.html', 'Rush de Noël, chargeur 5 ports USB à -63%, soit 37,50 € d''économie', 'http://www.phoenixjp.net/news/fr/logos/logoAVCESAR.gif'),
+(6, '2017-12-18 18:01:36', 'AVCESAR.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/mQpIEATjWbg/rush-de-noel-casque-sony-mdr-a1-a-55-soit-121-deconomie.html', 'Rush de Noël, casque Sony MDR-A1 à -55%, soit 121 € d''économie', 'http://www.phoenixjp.net/news/fr/logos/logoAVCESAR.gif'),
+(7, '2017-12-18 18:01:30', 'Ere Numerique', 'http://feedproxy.google.com/~r/phoenixjp/~3/HAhKvKvChkA/rainbrow-le-jeu-pour-iphone-x-qui-se-joue-avec-les-sourcils-article-36006-18.html', 'Rainbrow : le jeu pour iPhone X qui se joue avec… les sourcils !', 'http://www.phoenixjp.net/news/fr/logos/logoERENUM.gif'),
+(8, '2017-12-18 18:01:29', 'Jeux Expo', 'http://feedproxy.google.com/~r/phoenixjp/~3/lWWEoHl7_Hs/afficher_news-62773.html', 'RIFT : L''abonnement annuel à 99 dollars', 'http://www.phoenixjp.net/news/fr/logos/logoJEUXPO.gif'),
+(9, '2017-12-18 18:01:29', 'Jeux Expo', 'http://feedproxy.google.com/~r/phoenixjp/~3/4Jjw0TeB5k8/afficher_news-62772.html', 'Trove : Des concours en cours', 'http://www.phoenixjp.net/news/fr/logos/logoJEUXPO.gif'),
+(10, '2017-12-18 18:01:29', 'Jeux Expo', 'http://feedproxy.google.com/~r/phoenixjp/~3/POuFOYM8vUY/afficher_news-62771.html', 'ArcheAge : L''abonnement en promotion', 'http://www.phoenixjp.net/news/fr/logos/logoJEUXPO.gif'),
+(11, '2017-12-18 18:01:29', 'Jeux Expo', 'http://feedproxy.google.com/~r/phoenixjp/~3/FjL9lBybQt4/afficher_news-62770.html', 'Defiance : Une loterie spéciale', 'http://www.phoenixjp.net/news/fr/logos/logoJEUXPO.gif'),
+(12, '2017-12-18 18:01:29', 'Jeux Expo', 'http://feedproxy.google.com/~r/phoenixjp/~3/gT4Rh8I_Fnc/afficher_news-62769.html', 'TT Isle of Man : Passion et Légende', 'http://www.phoenixjp.net/news/fr/logos/logoJEUXPO.gif'),
+(13, '2017-12-18 18:01:29', 'Jeux Expo', 'http://feedproxy.google.com/~r/phoenixjp/~3/thIOCKMUOvc/afficher_news-62774.html', 'Dissidia Final Fantasy NT  : Nouvelle bande annonce', 'http://www.phoenixjp.net/news/fr/logos/logoJEUXPO.gif'),
+(14, '2017-12-18 18:01:23', 'Clubic.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/iFvYEhp_5l0/actualite-840570-extension-firefox-provoque-colere-internautes.html', 'L''extension de trop : Firefox provoque la colère des internautes', 'http://www.phoenixjp.net/news/fr/logos/logoCLUBIC.gif'),
+(15, '2017-12-18 18:01:22', 'Generation-NT', 'http://feedproxy.google.com/~r/phoenixjp/~3/JGSf005PsRQ/jailbreak-ios-iphone-x-alibaba-actualite-1949203.html', 'Jailbreak untethered d''iOS 11.2.1 sur iPhone X', 'http://www.phoenixjp.net/news/fr/logos/logoGENNT.gif'),
+(16, '2017-12-18 18:01:20', '01Net', 'http://feedproxy.google.com/~r/phoenixjp/~3/x5If9QNgkE4/tengami-waterminder-colorzzle-les-promos-du-jour-pour-iphone-ipad-et-android-1330390.html', 'Tengami, WaterMinder, Colorzzle : les promos du jour pour iPhone, iPad et Android', 'http://www.phoenixjp.net/news/fr/logos/logo01NET.gif'),
+(17, '2017-12-18 18:01:14', 'LesMobiles.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/Xa1zt7DgiJk/24869-synaptics-clear-id-le-premier-mobile-equipe-sera-signe-vivo.html', 'Synaptics Clear ID : le premier mobile équipé sera signé Vivo', 'http://www.phoenixjp.net/news/fr/logos/logoLMOBILES.gif'),
+(18, '2017-12-18 18:00:57', 'Tom''s Guide', 'http://feedproxy.google.com/~r/phoenixjp/~3/cU9XmWtxUeM/casque-annulation-bruit,51032.html', 'Guide d''achat : quel est le meilleur casque à annulation de bruit ?', 'http://www.phoenixjp.net/news/fr/logos/logoTOMSG.gif'),
+(19, '2017-12-18 18:00:43', 'JeuxVideo.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/lyV9QjzMabc/mario-the-lapins-cretins-kingdom-battle-propose-desormais-de-la-capture-video.htm', 'Mario + The Lapins Crétins Kingdom Battle propose désormais de la capture vidéo', 'http://www.phoenixjp.net/news/fr/logos/logoJVIDEO.gif'),
+(20, '2017-12-18 18:00:43', 'JeuxVideo.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/2a8qm7-lBOA/pubg-sur-xbox-one-desactiver-la-fonction-d-enregistrement-fait-gagner-des-fps.htm', 'PUBG sur Xbox One : Désactiver la fonction d''enregistrement fait gagner des fps', 'http://www.phoenixjp.net/news/fr/logos/logoJVIDEO.gif'),
+(21, '2017-12-18 18:00:38', 'Next Inpact', 'http://feedproxy.google.com/~r/phoenixjp/~3/CLecorW9Zt8/105840-ipv6-33-a-35-dutilisation-chez-free-et-orange-bouygues-et-sfr-a-moins-1.htm', 'IPv6 : 33 à 35 % d''utilisation chez Free et Orange, Bouygues et SFR à moins de 1 %', 'http://www.phoenixjp.net/news/fr/logos/logoNEXTINPACT.gif'),
+(22, '2017-12-18 18:00:34', 'GameKult.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/qgu-9KIvbtw/episode-ignis-toutes-les-bonnes-choses-ont-une-faim-3050800835.html', 'Episode Ignis, toutes les bonnes choses ont une faim', 'http://www.phoenixjp.net/news/fr/logos/logoGAMEKULT.gif'),
+(23, '2017-12-18 18:00:25', 'Gameblog', 'http://feedproxy.google.com/~r/phoenixjp/~3/UGVNDqpOnMc/72508-dragon-quest-builders-trouve-enfin-sa-sortie-sur-switch-et-p', 'Dragon Quest Builders trouve enfin sa sortie sur Switch et présente ses bonus', 'http://www.phoenixjp.net/news/fr/logos/logoGBLOG.gif'),
+(24, '2017-12-18 17:41:55', 'Le Journal du Geek', 'http://feedproxy.google.com/~r/phoenixjp/~3/BH6phVxwe1s/', '[Impressions] Un mois avant sa sortie, on vous dit si Dragon Ball FighterZ peut tout exploser', 'http://www.phoenixjp.net/news/fr/logos/logoJDGEEK.gif'),
+(25, '2017-12-18 17:41:51', 'LesNumeriques', 'http://feedproxy.google.com/~r/phoenixjp/~3/dL6stC6ATeo/bon-plan-clavier-mecanique-corsair-k70-lux-a-86-euros-n69547.html', 'Bon plan – Clavier mécanique Corsair K70 Lux à 86 €', 'http://www.phoenixjp.net/news/fr/logos/logoLNUMERIQ.gif'),
+(26, '2017-12-18 17:41:32', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/Q6nMuosr3ig/test-avis-oddworld-new-n-tasty-bon-jeu-plateforme-iphone-ipad-894399', 'Test ''Oddworld: New ''n'' Tasty'': 20 après sa première aventure sur console, l’attachante créature Abe réussit son arrivée sur iPhone et iPad', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
+(27, '2017-12-18 17:41:32', 'IPhon.fr', 'http://feedproxy.google.com/~r/phoenixjp/~3/Ur-xP5fLajI/jai-mal-ma-route-app-iphone-citoyenne-routes-abimees-894521', 'J''ai mal à ma route:  l''app citoyenne pour signaler routes abimées et mal entretenues, depuis son smartphone !', 'http://www.phoenixjp.net/news/fr/logos/logoIPHON.gif'),
+(28, '2017-12-18 17:41:28', 'Ecran Large', 'http://feedproxy.google.com/~r/phoenixjp/~3/BHUw41mhpOk/1007860-cro-man-rend-la-pate-a-modeler-epique-dans-sa-nouvelle-bande-annonce-rejouissante', 'Cro Man rend la pâte à modeler épique dans sa nouvelle bande-annonce réjouissante', 'http://www.phoenixjp.net/news/fr/logos/logoECRANLARGE.gif'),
+(29, '2017-12-18 17:41:18', 'AVCESAR.com', 'http://feedproxy.google.com/~r/phoenixjp/~3/hJuvlUkEDh8/cozmo-le-petit-robot-programmable-par-tous.html', 'Cozmo, le petit robot programmable par tous', 'http://www.phoenixjp.net/news/fr/logos/logoAVCESAR.gif');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

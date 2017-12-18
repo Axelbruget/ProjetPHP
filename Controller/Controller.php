@@ -30,6 +30,9 @@ class Controller
             case 'AjouterAdmin':
                 $this->ajouterUtilisateur('admin');
                 break;
+            case 'SupprimerUtilisateur':
+                $this->supprimerUtilisateur();
+                break;
             default :
                 echo "autre erreur";
                 break;
@@ -87,6 +90,13 @@ class Controller
         $clientgateway->insertClient($_SESSION['clientCourant']);
         require_once("Vues/SuperAdmin.php");
     }
+
+    public function supprimerUtilisateur(){
+        $clientgateway = new ClientGateway();
+        $clientgateway->deleteClient($_REQUEST['id']);
+        require_once("Vues/SuperAdmin.php");
+    }
+
 
 
 

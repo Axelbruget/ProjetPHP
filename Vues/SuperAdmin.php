@@ -80,6 +80,14 @@ $nombreAdmins = $clientGateway->getNombreAdmins();
 
 </form>
 
+<h2>Supprimer un Utilisateur :</h2>
+<form method="POST">
+    ID : <input type="text" name="id"/>
+
+
+    <input type="submit" name="action" value="SupprimerUtilisateur"/>
+
+</form>
 
 </body>
 
