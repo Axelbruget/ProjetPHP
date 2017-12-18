@@ -25,8 +25,17 @@ class ClientGateway
 
     //supprimerClient
     //(par id car on a pas besoin d'instancier un client à chaque fois que l'on veux supprimer de cette maniere)
-    public function deleteClient($id){
+    public function deleteUtilisateur($id){
         $requete="delete from client2 where id=?";
+        $valeurs=[
+            "$id" => PDO::PARAM_INT
+        ];
+
+        $this->con->executeQuery($requete, $valeurs);
+    }
+
+    public function deleteClient($id){
+        $requete="delete from client2 where id=? and statut= 'client'";
         $valeurs=[
             "$id" => PDO::PARAM_INT
         ];

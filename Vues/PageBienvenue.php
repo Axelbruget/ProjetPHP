@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PageConnection</title>
+    <title>Page News</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="Css/PageBienvenue.css" />
 </head>

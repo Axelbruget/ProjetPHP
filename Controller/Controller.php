@@ -26,12 +26,21 @@ class Controller
                 break;
             case 'AjouterClient':
                 $this->ajouterUtilisateur('client');
+                require_once("Vues/SuperAdmin.php");
                 break;
             case 'AjouterAdmin':
                 $this->ajouterUtilisateur('admin');
+                require_once("Vues/SuperAdmin.php");
+                break;
+            case 'Ajouter':
+                $this->ajouterUtilisateur('client');
+                require_once("Vues/PageAdmin.php");
                 break;
             case 'SupprimerUtilisateur':
                 $this->supprimerUtilisateur();
+                break;
+            case 'SupprimerClient':
+                $this->supprimerClient();
                 break;
             default :
                 echo "autre erreur";
@@ -52,7 +61,6 @@ class Controller
                 $_SESSION['clientCourant']->setStatut($modele->getStatut($_SESSION['clientCourant']->getId()));
                 if($_SESSION['clientCourant']->getStatut()=='admin'){ // si admin
                     require("Vues/PageAdmin.php");
-                    $this->afficherLesNews();
                 }
                 else if ($_SESSION['clientCourant']->getStatut()=='client'){ // si client
                     require("Vues/PageBienvenue.php");
@@ -88,13 +96,18 @@ class Controller
         $_SESSION['clientCourant']=new Client($id,$_REQUEST['login'],$_REQUEST['password'],$type);
         $clientgateway = new ClientGateway();
         $clientgateway->insertClient($_SESSION['clientCourant']);
-        require_once("Vues/SuperAdmin.php");
     }
 
     public function supprimerUtilisateur(){
         $clientgateway = new ClientGateway();
-        $clientgateway->deleteClient($_REQUEST['id']);
+        $clientgateway->deleteUtilisateur($_REQUEST['id']);
         require_once("Vues/SuperAdmin.php");
+    }
+
+    public function supprimerClient(){
+        $clientgateway = new ClientGateway();
+        $clientgateway->deleteClient($_REQUEST['id']);
+        require_once("Vues/PageAdmin.php");
     }
 
 

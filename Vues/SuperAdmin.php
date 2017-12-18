@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PageConnection</title>
+    <title>Page Super Admin</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="Css/SuperAdmin.css" />
 </head>
 <body>
 
-<h1>Administration</h1>
+<h1>Page Super Admin</h1>
 
 <?php
 /**
