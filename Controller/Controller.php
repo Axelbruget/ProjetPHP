@@ -93,6 +93,10 @@ class Controller
     public function ajouterUtilisateur($type){
         $clientgateway = new ClientGateway();
         $id = $clientgateway->getNombreUtilisateurs();
+
+        $val = new Validation();
+        $val->valUser($_REQUEST['login'],$_REQUEST['password']);
+
         $_SESSION['clientCourant']=new Client($id,$_REQUEST['login'],$_REQUEST['password'],$type);
         $clientgateway = new ClientGateway();
         $clientgateway->insertClient($_SESSION['clientCourant']);

@@ -10,4 +10,6 @@
     require_once("Gateways/NewsGateway.php");
     require_once("Metier/News.php");
 
+    require_once("Validation/Validation.php");
+
 ?>
